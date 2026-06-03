@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact · David Rogers for Pflugerville Place 6</title>
+  <meta name="description" content="Get in touch with David Rogers and the campaign team. We'd love to hear from you, neighbor.">
+  <link rel="icon" href="assets/img/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Hanken+Grotesk:wght@400;500;700;800&family=Shantell+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div data-include="header"></div>
+
+  <main id="main">
+    <section class="hero" style="padding-block:clamp(2rem,4vw,3rem);">
+      <div class="wrap">
+        <span class="eyebrow">Say howdy</span>
+        <h1>Get in touch</h1>
+        <p class="hero__lead" style="max-width:48ch;">Question, idea, or just want to share what matters to you in Pflugerville? Drop David a note &mdash; he reads them.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap grid grid-2" style="align-items:start;">
+        <div class="reveal">
+          <div class="setup-note">
+            <strong>Setup:</strong> paste your Formspree endpoint into the form&rsquo;s <code>action</code> (replace <code>YOUR_FORM_ID</code>), then delete this note.
+          </div>
+          <form class="form-card" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="field">
+              <label for="c-name">Name <span class="req">*</span></label>
+              <input id="c-name" name="name" type="text" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="c-email">Email <span class="req">*</span></label>
+              <input id="c-email" name="email" type="email" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="c-msg">Message <span class="req">*</span></label>
+              <textarea id="c-msg" name="message" required placeholder="What's on your mind, neighbor?"></textarea>
+            </div>
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="_subject" value="New message from the campaign website">
+            <button class="btn btn--lg" type="submit">Send it</button>
+          </form>
+        </div>
+
+        <div class="reveal">
+          <div class="card">
+            <h3 class="mt-0">Other ways to reach us</h3>
+            <p><strong>Email:</strong><br><a href="mailto:info@electmisterrogers.com">info@electmisterrogers.com</a> <span class="form-note">(confirm/replace)</span></p>
+            <p><strong>Follow along:</strong><br>Paste the campaign&rsquo;s social links into <code>assets/js/include.js</code> and they&rsquo;ll appear in the footer.</p>
+            <hr style="border:none;border-top:2px dashed var(--line);margin:1.2rem 0;">
+            <h3>Want to do more than talk?</h3>
+            <div class="btn-row">
+              <a class="btn" href="donate.html">Donate</a>
+              <a class="btn btn--gold" href="volunteer.html">Volunteer</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+  <script src="assets/js/include.js"></script>
+</body>
+</html>

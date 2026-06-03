@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Volunteer &amp; Yard Signs · David Rogers for Pflugerville Place 6</title>
+  <meta name="description" content="Join Team Rogers! Volunteer to knock doors, make calls, or host a sign — and request a yard sign for your home.">
+  <link rel="icon" href="assets/img/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Hanken+Grotesk:wght@400;500;700;800&family=Shantell+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div data-include="header"></div>
+
+  <main id="main">
+    <section class="hero" style="padding-block:clamp(2rem,4vw,3rem);">
+      <div class="wrap">
+        <span class="eyebrow">Pitch in</span>
+        <h1>Join Team Rogers</h1>
+        <p class="hero__lead" style="max-width:50ch;">Hometown races are won on front porches and in driveways. Knock a few doors, make a few calls, or just stick a sign in your yard &mdash; every bit helps.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap grid grid-2" style="align-items:start;">
+
+        <!-- VOLUNTEER FORM -->
+        <div class="reveal">
+          <h2>I want to help</h2>
+          <div class="setup-note">
+            <strong>Setup (one time):</strong> create a free <a href="https://formspree.io" target="_blank" rel="noopener">Formspree</a> account, make a form, and paste its endpoint into the <code>action</code> below (replace <code>YOUR_FORM_ID</code>). Submissions will email the campaign. Then delete this note. (Netlify Forms or a Google Form embed work too.)
+          </div>
+
+          <form class="form-card" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="field">
+              <label for="v-name">Name <span class="req">*</span></label>
+              <input id="v-name" name="name" type="text" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="v-email">Email <span class="req">*</span></label>
+              <input id="v-email" name="email" type="email" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="v-phone">Phone</label>
+              <input id="v-phone" name="phone" type="tel" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="v-zip">ZIP code</label>
+              <input id="v-zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" style="max-width:160px;">
+            </div>
+
+            <fieldset>
+              <legend>I&rsquo;d like to&hellip;</legend>
+              <div class="checks">
+                <label><input type="checkbox" name="help[]" value="Knock on doors"> Knock on doors</label>
+                <label><input type="checkbox" name="help[]" value="Make phone calls"> Make phone calls</label>
+                <label><input type="checkbox" name="help[]" value="Host or display a yard sign"> Host or display a yard sign</label>
+                <label><input type="checkbox" name="help[]" value="Help at events"> Help at events &amp; festivals</label>
+                <label><input type="checkbox" name="help[]" value="Write postcards"> Write postcards / notes</label>
+                <label><input type="checkbox" name="help[]" value="Wherever needed"> Put me wherever I&rsquo;m needed!</label>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="v-msg">Anything else?</label>
+              <textarea id="v-msg" name="message" placeholder="Days/times that work for you, skills you'd like to lend, etc."></textarea>
+            </div>
+
+            <!-- Honeypot spam trap (leave hidden) -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="_subject" value="New volunteer signup — Rogers campaign">
+
+            <button class="btn btn--lg" type="submit">Sign me up</button>
+            <p class="form-note" style="margin-top:0.8rem;">We&rsquo;ll never sell your info. We&rsquo;ll just reach out about helping the campaign.</p>
+          </form>
+        </div>
+
+        <!-- YARD SIGN -->
+        <div class="reveal" id="yard-sign">
+          <h2>Request a yard sign</h2>
+          <p>Show the neighborhood it&rsquo;s a beautiful day in Pflugerville. Tell us where to drop one off.</p>
+
+          <form class="form-card" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="field">
+              <label for="s-name">Name <span class="req">*</span></label>
+              <input id="s-name" name="name" type="text" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="s-email">Email <span class="req">*</span></label>
+              <input id="s-email" name="email" type="email" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="s-phone">Phone</label>
+              <input id="s-phone" name="phone" type="tel" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="s-address">Address for delivery <span class="req">*</span></label>
+              <input id="s-address" name="address" type="text" required autocomplete="street-address" placeholder="Street, Pflugerville, TX, ZIP">
+            </div>
+            <div class="field">
+              <label for="s-count">How many signs?</label>
+              <select id="s-count" name="signs">
+                <option>1</option><option>2</option><option>3</option><option>More — I&rsquo;ll explain below</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="s-note">Notes</label>
+              <textarea id="s-note" name="message" placeholder="Best time to drop off, gate codes, etc."></textarea>
+            </div>
+
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="_subject" value="Yard sign request — Rogers campaign">
+
+            <button class="btn btn--gold btn--lg" type="submit">Send me a sign</button>
+            <p class="form-note" style="margin-top:0.8rem;">Signs are first-come, first-served while supplies last.</p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="wrap center narrow">
+        <h2>Prefer to help with a donation?</h2>
+        <p class="lead">Signs, mailers, and door hangers all cost money. A few dollars goes a long way in a hometown race.</p>
+        <a class="btn btn--lg" href="donate.html">Donate today</a>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+  <script src="assets/js/include.js"></script>
+</body>
+</html>
