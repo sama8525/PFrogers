@@ -228,7 +228,7 @@ p  { margin: 0 0 1.1em; }
   font-size: 1.3rem; line-height: 1; color: var(--barn-red);
 }
 
-@media (max-width: 940px) {
+@media (max-width: 1180px) {
   .nav-toggle { display: block; }
   .nav {
     position: absolute; top: 100%; left: 0; right: 0;
@@ -291,6 +291,7 @@ p  { margin: 0 0 1.1em; }
    ================================================================= */
 .card {
   background: var(--card);
+  color: var(--ink);
   border: 1px solid var(--line-soft);
   border-radius: var(--radius);
   padding: clamp(1.3rem, 2.4vw, 1.9rem);

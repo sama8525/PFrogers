@@ -29,7 +29,6 @@ const NAV = [
   { href: "pflugerville.html", label: "Our Pflugerville" },
   { href: "updates.html",      label: "Updates" },
   { href: "volunteer.html",    label: "Volunteer" },
-  { href: "yard-sign.html",    label: "Request Yard Sign" },
   { href: "contact.html",      label: "Contact" },
 ];
 
@@ -59,6 +58,7 @@ function buildHeader() {
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">&#9776;</button>
       <nav class="nav" id="primary-nav" aria-label="Primary">
         ${links}
+        <a class="btn btn--green" href="yard-sign.html">Yard Sign</a>
         <a class="btn btn--gold" href="donate.html">Donate</a>
       </nav>
     </div>
