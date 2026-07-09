@@ -31,10 +31,12 @@
         <div class="reveal">
           <h2>I want to help</h2>
           <div class="setup-note">
-            <strong>Setup (one time):</strong> create a free <a href="https://formspree.io" target="_blank" rel="noopener">Formspree</a> account, make a form, and paste its endpoint into the <code>action</code> below (replace <code>YOUR_FORM_ID</code>). Submissions will email the campaign. Then delete this note. (Netlify Forms or a Google Form embed work too.)
+            <strong>Setup (one time):</strong> this form is wired for <a href="https://docs.netlify.com/manage/forms/setup/" target="_blank" rel="noopener">Netlify Forms</a>. When the site is deployed on Netlify, submissions appear in your dashboard under <strong>Forms</strong> &mdash; add an email/Slack notification there to get pinged. Then delete this note.
           </div>
 
-          <form class="form-card" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <form class="form-card" name="volunteer" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="volunteer">
+            <p hidden><label>Don&rsquo;t fill this out: <input name="bot-field"></label></p>
             <div class="field">
               <label for="v-name">Name <span class="req">*</span></label>
               <input id="v-name" name="name" type="text" required autocomplete="name">
@@ -69,10 +71,6 @@
               <textarea id="v-msg" name="message" placeholder="Days/times that work for you, skills you'd like to lend, etc."></textarea>
             </div>
 
-            <!-- Honeypot spam trap (leave hidden) -->
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-            <input type="hidden" name="_subject" value="New volunteer signup — Rogers campaign">
-
             <button class="btn btn--lg" type="submit">Sign me up</button>
             <p class="form-note" style="margin-top:0.8rem;">We&rsquo;ll never sell your info. We&rsquo;ll just reach out about helping the campaign.</p>
           </form>
@@ -81,52 +79,9 @@
         <!-- YARD SIGN -->
         <div class="reveal" id="yard-sign">
           <h2>Request a yard sign</h2>
-          <p>Show the neighborhood it&rsquo;s a beautiful day in Pflugerville. Tell us where to drop one off.</p>
-
-          <form class="form-card" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <div class="field">
-              <label for="s-name">Full name <span class="req">*</span></label>
-              <input id="s-name" name="name" type="text" required autocomplete="name">
-            </div>
-            <div class="field">
-              <label for="s-address">Street address <span class="req">*</span></label>
-              <input id="s-address" name="street_address" type="text" required autocomplete="street-address" placeholder="123 Main St">
-            </div>
-            <div class="field">
-              <label for="s-city">City <span class="req">*</span></label>
-              <input id="s-city" name="city" type="text" required autocomplete="address-level2" value="Pflugerville">
-            </div>
-            <div class="field">
-              <label for="s-zip">ZIP code <span class="req">*</span></label>
-              <input id="s-zip" name="zip" type="text" required inputmode="numeric" autocomplete="postal-code" style="max-width:160px;">
-            </div>
-            <div class="field">
-              <label for="s-phone">Phone</label>
-              <input id="s-phone" name="phone" type="tel" autocomplete="tel">
-            </div>
-            <div class="field">
-              <label for="s-email">Email <span class="req">*</span></label>
-              <input id="s-email" name="email" type="email" required autocomplete="email">
-            </div>
-            <div class="field">
-              <label for="s-type">Sign type wanted</label>
-              <select id="s-type" name="sign_type">
-                <option value="Yard sign" selected>Yard sign</option>
-                <option value="4x4">4x4</option>
-                <option value="4x8">4x8</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="s-note">Notes</label>
-              <textarea id="s-note" name="message" placeholder="Best time to drop off, gate codes, etc."></textarea>
-            </div>
-
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-            <input type="hidden" name="_subject" value="Yard sign request — Rogers campaign">
-
-            <button class="btn btn--gold btn--lg" type="submit">Send me a sign</button>
-            <p class="form-note" style="margin-top:0.8rem;">Signs are first-come, first-served while supplies last.</p>
-          </form>
+          <p>Show the neighborhood it&rsquo;s a beautiful day in Pflugerville. We&rsquo;ve got yard signs plus bigger 4x4 and 4x8 sizes for corners and businesses.</p>
+          <p>Tell us your address and which size you&rsquo;d like, and we&rsquo;ll bring one by.</p>
+          <a class="btn btn--gold btn--lg" href="yard-sign.html">Request a Yard Sign</a>
         </div>
 
       </div>

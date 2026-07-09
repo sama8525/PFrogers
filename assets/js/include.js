@@ -58,6 +58,7 @@ function buildHeader() {
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">&#9776;</button>
       <nav class="nav" id="primary-nav" aria-label="Primary">
         ${links}
+        <a class="btn btn--green" href="yard-sign.html">Yard Sign</a>
         <a class="btn btn--gold" href="donate.html">Donate</a>
       </nav>
     </div>
@@ -91,7 +92,7 @@ function buildFooter() {
         <ul>
           <li><a href="donate.html">Donate</a></li>
           <li><a href="volunteer.html">Volunteer</a></li>
-          <li><a href="volunteer.html#yard-sign">Request a yard sign</a></li>
+          <li><a href="yard-sign.html">Request a yard sign</a></li>
           <li><a href="mailto:${SITE.email}">${SITE.email}</a></li>
         </ul>
       </div>

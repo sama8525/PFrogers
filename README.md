@@ -14,7 +14,8 @@ record.html        Record & Plan
 pflugerville.html  Our Pflugerville (city history & people)
 updates.html       Blog / updates listing
 post-welcome.html  A sample blog post (copy it to make new ones)
-volunteer.html     Volunteer signup + yard-sign request
+volunteer.html     Volunteer signup
+yard-sign.html     Request a yard sign (yard / 4x4 / 4x8)
 donate.html        Donate
 contact.html       Contact
 404.html           Friendly "page not found"
@@ -65,9 +66,10 @@ can't do these by itself). Each spot is marked in the files with a **yellow setu
       donor name/address/employer/occupation the Texas Ethics Commission requires and deposits to
       the campaign account. Paste its embed code into `donate.html` (replace the gray box) **or**
       point the buttons to your donation page URL.
-- [ ] **Forms (volunteer, yard sign, contact).** Make a free Formspree account, create a form,
-      and replace `YOUR_FORM_ID` in `volunteer.html` and `contact.html` with your endpoint.
-      Submissions will email you. (Netlify Forms or a Google Form embed also work.)
+- [ ] **Forms (volunteer, yard sign, contact).** These are wired for **Netlify Forms** — no
+      account keys to paste. Deploy the site on Netlify, then turn on **form detection**
+      (Site configuration → Forms) and redeploy. Submissions show up in your dashboard under
+      **Forms**; add an email/Slack notification there to get pinged.
 - [ ] **Logo & photos.** Download David's logo/photos into `assets/img/` and update the `src`
       attributes + `SITE.logo` in `include.js`. See `assets/img/README.md` for safe image sources.
 - [ ] **Brand colors.** Open `assets/css/styles.css`, top section. Confirm the red/gold/green

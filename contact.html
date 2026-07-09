@@ -28,9 +28,11 @@
       <div class="wrap grid grid-2" style="align-items:start;">
         <div class="reveal">
           <div class="setup-note">
-            <strong>Setup:</strong> paste your Formspree endpoint into the form&rsquo;s <code>action</code> (replace <code>YOUR_FORM_ID</code>), then delete this note.
+            <strong>Setup:</strong> this form is wired for <a href="https://docs.netlify.com/manage/forms/setup/" target="_blank" rel="noopener">Netlify Forms</a>. Once deployed on Netlify, submissions land in your dashboard under <strong>Forms</strong> &mdash; add an email notification there. Then delete this note.
           </div>
-          <form class="form-card" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <form class="form-card" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact">
+            <p hidden><label>Don&rsquo;t fill this out: <input name="bot-field"></label></p>
             <div class="field">
               <label for="c-name">Name <span class="req">*</span></label>
               <input id="c-name" name="name" type="text" required autocomplete="name">
@@ -43,8 +45,6 @@
               <label for="c-msg">Message <span class="req">*</span></label>
               <textarea id="c-msg" name="message" required placeholder="What's on your mind, neighbor?"></textarea>
             </div>
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-            <input type="hidden" name="_subject" value="New message from the campaign website">
             <button class="btn btn--lg" type="submit">Send it</button>
           </form>
         </div>
