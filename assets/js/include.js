@@ -29,6 +29,7 @@ const NAV = [
   { href: "pflugerville.html", label: "Our Pflugerville" },
   { href: "updates.html",      label: "Updates" },
   { href: "volunteer.html",    label: "Volunteer" },
+  { href: "yard-sign.html",    label: "Request Yard Sign" },
   { href: "contact.html",      label: "Contact" },
 ];
 
@@ -91,7 +92,7 @@ function buildFooter() {
         <ul>
           <li><a href="donate.html">Donate</a></li>
           <li><a href="volunteer.html">Volunteer</a></li>
-          <li><a href="volunteer.html#yard-sign">Request a yard sign</a></li>
+          <li><a href="yard-sign.html">Request a yard sign</a></li>
           <li><a href="mailto:${SITE.email}">${SITE.email}</a></li>
         </ul>
       </div>

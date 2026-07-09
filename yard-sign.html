@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request a Yard Sign · David Rogers for Pflugerville Place 6</title>
+  <meta name="description" content="Show the neighborhood it's a beautiful day in Pflugerville. Request a David Rogers yard sign for your home — yard, 4x4, or 4x8.">
+  <link rel="icon" href="assets/img/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Hanken+Grotesk:wght@400;500;700;800&family=Shantell+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div data-include="header"></div>
+
+  <main id="main">
+    <section class="hero" style="padding-block:clamp(2rem,4vw,3rem);">
+      <div class="wrap">
+        <span class="eyebrow">Show your support</span>
+        <h1>Request a Yard Sign</h1>
+        <p class="hero__lead" style="max-width:52ch;">Nothing says &ldquo;it&rsquo;s a beautiful day in Pflugerville&rdquo; like a Rogers sign in the yard. Tell us where to drop one off and which size you&rsquo;d like &mdash; we&rsquo;ll bring it by.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap grid grid-2" style="align-items:start;">
+
+        <!-- YARD SIGN FORM -->
+        <div class="reveal" id="yard-sign">
+          <h2>Tell us where to drop one off</h2>
+          <form class="form-card" name="yard-sign" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="yard-sign">
+            <p hidden><label>Don&rsquo;t fill this out: <input name="bot-field"></label></p>
+            <div class="field">
+              <label for="s-name">Full name <span class="req">*</span></label>
+              <input id="s-name" name="name" type="text" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="s-address">Street address <span class="req">*</span></label>
+              <input id="s-address" name="street_address" type="text" required autocomplete="street-address" placeholder="123 Main St">
+            </div>
+            <div class="field">
+              <label for="s-city">City <span class="req">*</span></label>
+              <input id="s-city" name="city" type="text" required autocomplete="address-level2" value="Pflugerville">
+            </div>
+            <div class="field">
+              <label for="s-zip">ZIP code <span class="req">*</span></label>
+              <input id="s-zip" name="zip" type="text" required inputmode="numeric" autocomplete="postal-code" style="max-width:160px;">
+            </div>
+            <div class="field">
+              <label for="s-phone">Phone</label>
+              <input id="s-phone" name="phone" type="tel" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="s-email">Email <span class="req">*</span></label>
+              <input id="s-email" name="email" type="email" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="s-type">Sign type wanted</label>
+              <select id="s-type" name="sign_type">
+                <option value="Yard sign" selected>Yard sign</option>
+                <option value="4x4">4x4</option>
+                <option value="4x8">4x8</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="s-note">Notes</label>
+              <textarea id="s-note" name="message" placeholder="Best time to drop off, gate codes, etc."></textarea>
+            </div>
+
+            <button class="btn btn--gold btn--lg" type="submit">Send me a sign</button>
+            <p class="form-note" style="margin-top:0.8rem;">Signs are first-come, first-served while supplies last.</p>
+          </form>
+        </div>
+
+        <!-- ASIDE -->
+        <div class="reveal">
+          <div class="card">
+            <h3 class="mt-0">Sign sizes</h3>
+            <ul>
+              <li><strong>Yard sign</strong> &mdash; the classic corrugated sign on a wire stake. Perfect for a front lawn.</li>
+              <li><strong>4x4</strong> &mdash; a larger 4-foot panel for a bigger yard or a busy corner.</li>
+              <li><strong>4x8</strong> &mdash; our biggest banner, great for a business, fence line, or high-traffic spot.</li>
+            </ul>
+            <hr style="border:none;border-top:2px dashed var(--line);margin:1.2rem 0;">
+            <h3>Want to do more?</h3>
+            <p>Signs are a great start &mdash; here&rsquo;s how else you can pitch in.</p>
+            <div class="btn-row">
+              <a class="btn" href="volunteer.html">Volunteer</a>
+              <a class="btn btn--gold" href="donate.html">Donate</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+  <script src="assets/js/include.js"></script>
+</body>
+</html>
