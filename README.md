@@ -65,9 +65,10 @@ can't do these by itself). Each spot is marked in the files with a **yellow setu
       donor name/address/employer/occupation the Texas Ethics Commission requires and deposits to
       the campaign account. Paste its embed code into `donate.html` (replace the gray box) **or**
       point the buttons to your donation page URL.
-- [ ] **Forms (volunteer, yard sign, contact).** Make a free Formspree account, create a form,
-      and replace `YOUR_FORM_ID` in `volunteer.html` and `contact.html` with your endpoint.
-      Submissions will email you. (Netlify Forms or a Google Form embed also work.)
+- [ ] **Forms (volunteer, yard sign, contact).** These are wired for **Netlify Forms** — no
+      account keys to paste. Deploy the site on Netlify and submissions show up in your dashboard
+      under **Forms**; add an email/Slack notification there to get pinged. (If you host somewhere
+      other than Netlify, swap in a Formspree endpoint or a Google Form embed instead.)
 - [ ] **Logo & photos.** Download David's logo/photos into `assets/img/` and update the `src`
       attributes + `SITE.logo` in `include.js`. See `assets/img/README.md` for safe image sources.
 - [ ] **Brand colors.** Open `assets/css/styles.css`, top section. Confirm the red/gold/green
