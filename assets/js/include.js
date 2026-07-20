@@ -11,14 +11,14 @@
 const SITE = {
   candidate: "David Rogers",
   office: "Pflugerville City Council · Place 6",
-  // Logo: David's real logo, now stored locally in the repo.
   logo: "assets/img/logo.jpg",
-  email: "info@electmisterrogers.com",      // <-- confirm/replace
+  email: "info@electmisterrogers.com",
   treasurer: "Omar Peña",
+  // Social links appear in the footer only when set to a real URL (not "#").
   social: {
-    facebook: "#",   // <-- paste the campaign Facebook URL
-    instagram: "#",  // <-- paste Instagram URL (or remove)
-    x: "#"           // <-- paste X/Twitter URL (or remove)
+    facebook: "#",
+    instagram: "#",
+    x: "#"
   }
 };
 
