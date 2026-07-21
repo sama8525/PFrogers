@@ -24,9 +24,9 @@ const SITE = {
 
 const NAV = [
   { href: "index.html",        label: "Home" },
-  { href: "about.html",        label: "About Mr. Rogers" },
-  { href: "record.html",       label: "Record & Plan" },
-  { href: "pflugerville.html", label: "Our Pflugerville" },
+  { href: "about.html",        label: "About" },
+  { href: "record.html",       label: "Record" },
+  { href: "pflugerville.html", label: "Pflugerville" },
   { href: "updates.html",      label: "Updates" },
   { href: "volunteer.html",    label: "Volunteer" },
   { href: "contact.html",      label: "Contact" },

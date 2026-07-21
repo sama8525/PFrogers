@@ -11,9 +11,8 @@
    ================================================================= */
 
 /* ---- Fonts (loaded in each page <head>) ----
-   Fraunces      = warm characterful serif (headings)
-   Hanken Grotesk = friendly readable body
-   Shantell Sans  = hand-lettered accents ("HOWDY!", labels, captions)
+   Fraunces       = warm characterful serif (headings)
+   Hanken Grotesk = friendly readable body + accent labels
 */
 
 :root {
@@ -39,10 +38,10 @@
   /* ---------- TYPE ---------- */
   --display: "Fraunces", Georgia, "Times New Roman", serif;
   --body:    "Hanken Grotesk", -apple-system, system-ui, sans-serif;
-  --hand:    "Shantell Sans", "Comic Sans MS", cursive;
+  --hand:    "Hanken Grotesk", -apple-system, system-ui, sans-serif;
 
   /* ---------- SPACING / SHAPE ---------- */
-  --maxw: 1120px;
+  --maxw: 1200px;
   --maxw-narrow: 740px;
   --radius: 14px;
   --gap: clamp(1.2rem, 3vw, 2.4rem);
@@ -118,14 +117,14 @@ p  { margin: 0 0 1.1em; }
    HAND-LETTERED ACCENTS & DECORATIONS
    ================================================================= */
 .eyebrow {
-  font-family: var(--hand);
-  font-weight: 700;
+  font-family: var(--body);
+  font-weight: 800;
   color: var(--barn-red);
-  font-size: 1.15rem;
-  letter-spacing: 0.02em;
-  transform: rotate(-2deg);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   display: inline-block;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 .howdy {
   font-family: var(--hand);
@@ -205,11 +204,11 @@ p  { margin: 0 0 1.1em; }
   display: flex; align-items: center; justify-content: space-between;
   gap: 1rem; padding-block: 0.6rem;
 }
-.brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+.brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; flex-shrink: 0; }
 .brand img { width: 54px; height: 54px; border-radius: 50%; border: 3px solid var(--bluebonnet); object-fit: cover; background:#fff; }
 .brand__text { line-height: 1.05; }
-.brand__name { font-family: var(--display); font-weight: 700; font-size: 1.3rem; color: var(--barn-red); }
-.brand__sub  { font-family: var(--hand); font-size: 0.92rem; color: var(--ink-soft); }
+.brand__name { font-family: var(--display); font-weight: 700; font-size: 1.3rem; color: var(--barn-red); white-space: nowrap; }
+.brand__sub  { font-family: var(--hand); font-size: 0.92rem; color: var(--ink-soft); white-space: nowrap; }
 
 .nav { display: flex; align-items: center; gap: 0.2rem; }
 .nav a {
@@ -228,7 +227,7 @@ p  { margin: 0 0 1.1em; }
   font-size: 1.3rem; line-height: 1; color: var(--barn-red);
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1300px) {
   .nav-toggle { display: block; }
   .nav {
     position: absolute; top: 100%; left: 0; right: 0;
@@ -255,35 +254,26 @@ p  { margin: 0 0 1.1em; }
   overflow: hidden;
 }
 .hero__grid { display: grid; gap: var(--gap); align-items: center; }
-@media (min-width: 860px) { .hero__grid { grid-template-columns: 1.1fr 0.9fr; } }
+@media (min-width: 860px) { .hero__grid { grid-template-columns: 1fr 1fr; } }
 .hero h1 { margin-bottom: 0.3rem; }
 .hero h1 .underline { background: linear-gradient(transparent 62%, var(--blue-lt) 62%); padding: 0 0.1em; }
 .hero__lead { font-size: clamp(1.1rem, 1.6vw, 1.35rem); color: var(--ink-soft); max-width: 36ch; }
 
-/* Taped-down photo frame */
+/* Clean photo frame */
 .photo-frame {
   position: relative;
   background: var(--card);
-  padding: 0.9rem 0.9rem 2.6rem;
+  padding: 0.5rem;
   border: 1px solid var(--line-soft);
-  box-shadow: var(--shadow-pop);
-  transform: rotate(2deg);
-  border-radius: 4px;
+  box-shadow: var(--shadow-soft);
+  border-radius: 10px;
 }
-.photo-frame img { border-radius: 2px; width: 100%; }
+.photo-frame { align-self: start; }
+.photo-frame img { border-radius: 6px; width: 100%; display: block; }
 .photo-frame figcaption {
-  position: absolute; bottom: 0.7rem; left: 0; right: 0;
-  text-align: center; font-family: var(--hand); font-weight: 700;
-  color: var(--ink-soft); font-size: 1.02rem;
-}
-.photo-frame--left { transform: rotate(-2deg); }
-/* Strip of "tape" */
-.photo-frame::before {
-  content: ""; position: absolute; top: -14px; left: 50%; transform: translateX(-50%) rotate(-3deg);
-  width: 120px; height: 28px;
-  background: rgba(201, 136, 46, 0.45);
-  border: 1px solid rgba(201, 136, 46, 0.5);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  text-align: center; font-family: var(--body); font-weight: 700;
+  color: var(--ink); font-size: 1rem;
+  padding: 0.7rem 0.5rem 0.35rem;
 }
 
 /* =================================================================
