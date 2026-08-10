@@ -13,7 +13,7 @@ const SITE = {
   office: "Pflugerville City Council · Place 6",
   logo: "assets/img/logo.jpg",
   email: "info@electmisterrogers.com",
-  treasurer: "Omar Peña",
+  treasurer: "Brad Hickman",
   // Social links appear in the footer only when set to a real URL (not "#").
   social: {
     facebook: "#",
