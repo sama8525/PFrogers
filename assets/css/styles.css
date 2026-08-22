@@ -329,6 +329,13 @@ p  { margin: 0 0 1.1em; }
 @media (min-width: 760px) { .svc-grid { grid-template-columns: repeat(4, 1fr); } }
 @media (min-width: 720px) { .about-intro.grid-2 { grid-template-columns: 1.15fr 0.85fr; } }
 
+/* FAQ */
+.faq { margin-top: 2rem; }
+.faq-item { padding: 1.35rem 0; border-bottom: 1px solid var(--line-soft); }
+.faq-item:first-child { border-top: 1px solid var(--line-soft); }
+.faq-item h3 { margin: 0 0 0.45rem; color: var(--barn-red); }
+.faq-item p { margin: 0; color: var(--ink-soft); }
+
 /* Masonry photo gallery */
 .gallery { columns: 4 250px; column-gap: 1rem; margin-top: 2rem; }
 .gallery figure { break-inside: avoid; margin: 0 0 1rem; }
