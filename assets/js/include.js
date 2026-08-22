@@ -44,7 +44,7 @@ function buildHeader() {
 
   return `
   <div class="topbar">
-    A beautiful day in Pflugerville &mdash; <a href="donate.html">Chip in to the campaign &rarr;</a>
+    A beautiful day in Pflugerville. <a href="donate.html">Chip in to the campaign &rarr;</a>
   </div>
   <header class="masthead">
     <div class="wrap masthead__inner">
