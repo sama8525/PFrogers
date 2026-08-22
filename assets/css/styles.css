@@ -248,33 +248,35 @@ p  { margin: 0 0 1.1em; }
    ================================================================= */
 .hero {
   position: relative;
-  background:
-    linear-gradient(180deg, rgba(247,239,225,0) 0%, var(--paper) 92%),
-    repeating-linear-gradient(135deg, var(--paper-deep) 0 26px, var(--paper) 26px 52px);
+  background: var(--paper);
   padding-block: clamp(2.5rem, 6vw, 4.5rem);
   overflow: hidden;
 }
 .hero__grid { display: grid; gap: var(--gap); align-items: center; }
-@media (min-width: 860px) { .hero__grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 860px) { .hero__grid { grid-template-columns: 0.95fr 1.15fr; } }
 .hero h1 { margin-bottom: 0.3rem; }
 .hero h1 .underline { background: linear-gradient(transparent 62%, var(--blue-lt) 62%); padding: 0 0.1em; }
 .hero__lead { font-size: clamp(1.1rem, 1.6vw, 1.35rem); color: var(--ink-soft); max-width: 36ch; }
 
-/* Clean photo frame */
+/* Frameless photo — thin blue keyline, no card box */
 .photo-frame {
   position: relative;
-  background: var(--card);
-  padding: 0.5rem;
-  border: 1px solid var(--line-soft);
-  box-shadow: var(--shadow-soft);
-  border-radius: 10px;
+  align-self: start;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
 }
-.photo-frame { align-self: start; }
-.photo-frame img { border-radius: 6px; width: 100%; display: block; }
+.photo-frame img {
+  width: 100%; display: block;
+  border: 3px solid var(--bluebonnet);
+  border-radius: 8px;
+}
 .photo-frame figcaption {
   text-align: center; font-family: var(--body); font-weight: 700;
   color: var(--ink); font-size: 1rem;
-  padding: 0.7rem 0.5rem 0.35rem;
+  padding: 0.6rem 0.4rem 0.15rem;
 }
 
 /* =================================================================
@@ -314,14 +316,23 @@ p  { margin: 0 0 1.1em; }
    ================================================================= */
 .placeholder-photo {
   display: flex; align-items: center; justify-content: center; text-align: center;
-  min-height: 220px; padding: 1.2rem;
-  background:
-    repeating-linear-gradient(45deg, var(--paper-deep) 0 12px, var(--line-soft) 12px 24px);
-  border: 2px dashed var(--line);
-  border-radius: 6px;
+  min-height: 240px; padding: 1.2rem;
+  background: var(--card);
+  border: 2px dashed var(--bluebonnet);
+  border-radius: 8px;
   color: var(--ink-soft);
-  font-family: var(--hand); font-weight: 700; font-size: 0.95rem;
+  font-family: var(--body); font-weight: 700; font-size: 0.95rem;
 }
+
+/* Experience band + service grid */
+.exp-band { display: grid; gap: var(--gap); align-items: center; margin-top: 2rem; }
+@media (min-width: 860px) { .exp-band { grid-template-columns: 1fr 1.15fr 1fr; } }
+.exp-stats { list-style: none; margin: 0 0 1.1rem; padding: 0; display: grid; gap: 0.7rem; }
+.exp-stats li { font-family: var(--display); font-size: clamp(1.2rem, 1.8vw, 1.5rem); line-height: 1.15; }
+.exp-stats b { color: var(--barn-red); }
+.svc-grid { display: grid; gap: var(--gap); grid-template-columns: repeat(2, 1fr); margin-top: 2rem; }
+@media (min-width: 760px) { .svc-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 720px) { .about-intro.grid-2 { grid-template-columns: 1.15fr 0.85fr; } }
 .placeholder-photo span { background: rgba(255,250,240,0.85); padding: 0.5rem 0.8rem; border-radius: 6px; }
 
 .timeline { list-style: none; margin: 2rem 0 0; padding: 0; position: relative; }

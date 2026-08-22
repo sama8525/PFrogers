@@ -10,7 +10,7 @@
 
 const SITE = {
   candidate: "David Rogers",
-  office: "Pflugerville City Council · Place 6",
+  office: "Pflugerville City Council",
   logo: "assets/img/logo.jpg",
   email: "info@electmisterrogers.com",
   treasurer: "Brad Hickman",
