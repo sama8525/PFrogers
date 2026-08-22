@@ -62,12 +62,6 @@ body {
   line-height: 1.7;
   color: var(--ink);
   background-color: var(--paper);
-  /* Subtle paper grain so backgrounds aren't flat: */
-  background-image:
-    radial-gradient(rgba(120, 90, 50, 0.05) 1px, transparent 1px),
-    radial-gradient(rgba(120, 90, 50, 0.04) 1px, transparent 1px);
-  background-size: 22px 22px, 22px 22px;
-  background-position: 0 0, 11px 11px;
   overflow-x: hidden;
 }
 
