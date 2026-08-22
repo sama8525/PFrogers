@@ -20,8 +20,9 @@
      The logo is two colors: a true red and a steel blue. Those are the
      two anchors below. Gold + green are OPTIONAL supporting accents — if
      the site ever feels too busy, drop them back toward red/blue/cream. */
-  --barn-red:    #b00901;   /* LOGO RED — primary buttons, accents */
-  --barn-red-dk: #8a0701;   /* darker red for hover/active */
+  /* Accent remapped from red to the logo blue (site-wide "all blue") */
+  --barn-red:    #006794;   /* was LOGO RED — now blue: buttons, accents */
+  --barn-red-dk: #004f6e;   /* darker blue for hover/active */
   --bluebonnet:  #006794;   /* LOGO BLUE — secondary anchor */
   --bluebonnet-dk: #004f6e; /* darker blue for hover/active */
   --blue-lt:     #bfe0ef;   /* pale blue — highlights, footer links on dark */
