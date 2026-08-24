@@ -26,6 +26,7 @@ const NAV = [
   { href: "index.html",        label: "Home" },
   { href: "about.html",        label: "About" },
   { href: "record.html",       label: "Record" },
+  { href: "endorsements.html", label: "Endorsements" },
   { href: "pflugerville.html", label: "Pflugerville" },
   { href: "updates.html",      label: "Updates" },
   { href: "volunteer.html",    label: "Volunteer" },
