@@ -223,7 +223,7 @@ p  { margin: 0 0 1.1em; }
   font-size: 1.3rem; line-height: 1; color: var(--barn-red);
 }
 
-@media (max-width: 1380px) {
+@media (max-width: 1560px) {
   .nav-toggle { display: block; }
   .nav {
     position: absolute; top: 100%; left: 0; right: 0;
@@ -325,9 +325,15 @@ p  { margin: 0 0 1.1em; }
 .exp-stats { list-style: none; margin: 0 0 1.1rem; padding: 0; display: grid; gap: 0.7rem; }
 .exp-stats li { font-family: var(--display); font-size: clamp(1.2rem, 1.8vw, 1.5rem); line-height: 1.15; }
 .exp-stats b { color: var(--barn-red); }
-.svc-grid { display: grid; gap: var(--gap); grid-template-columns: repeat(2, 1fr); margin-top: 2rem; }
-@media (min-width: 760px) { .svc-grid { grid-template-columns: repeat(4, 1fr); } }
+.svc-grid { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); margin-top: 2rem; }
+@media (min-width: 760px) { .svc-grid { grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); } }
+.svc-grid .photo-frame img { aspect-ratio: 4 / 3; object-fit: cover; }
 @media (min-width: 720px) { .about-intro.grid-2 { grid-template-columns: 1.15fr 0.85fr; } }
+
+/* Endorsements */
+.endorse-list { columns: 3 220px; column-gap: 2.2rem; margin: 2rem 0 0; padding: 0; list-style: none; }
+.endorse-list li { break-inside: avoid; padding: 0.55rem 0 0.55rem 1.7rem; position: relative; font-weight: 600; border-bottom: 1px solid var(--line-soft); }
+.endorse-list li::before { content: "\2713"; position: absolute; left: 0; top: 0.55rem; color: var(--bluebonnet); font-weight: 800; }
 
 /* FAQ */
 .faq { margin-top: 2rem; }
