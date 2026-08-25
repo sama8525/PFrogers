@@ -47,6 +47,14 @@
               <input id="v-phone" name="phone" type="tel" autocomplete="tel">
             </div>
             <div class="field">
+              <label for="v-address">Street address</label>
+              <input id="v-address" name="address" type="text" placeholder="1234 Main St" autocomplete="address-line1">
+            </div>
+            <div class="field">
+              <label for="v-city">City</label>
+              <input id="v-city" name="city" type="text" value="Pflugerville" autocomplete="address-level2">
+            </div>
+            <div class="field">
               <label for="v-zip">ZIP code</label>
               <input id="v-zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" style="max-width:160px;">
             </div>
@@ -54,18 +62,18 @@
             <fieldset>
               <legend>I&rsquo;d like to&hellip;</legend>
               <div class="checks">
-                <label><input type="checkbox" name="help[]" value="Knock on doors"> Knock on doors</label>
-                <label><input type="checkbox" name="help[]" value="Make phone calls"> Make phone calls</label>
-                <label><input type="checkbox" name="help[]" value="Host or display a yard sign"> Host or display a yard sign</label>
-                <label><input type="checkbox" name="help[]" value="Help at events"> Help at events &amp; festivals</label>
-                <label><input type="checkbox" name="help[]" value="Write postcards"> Write postcards / notes</label>
-                <label><input type="checkbox" name="help[]" value="Wherever needed"> Put me wherever I&rsquo;m needed!</label>
+                <label><input type="checkbox" name="volunteer_interests" value="knock_doors"> Knock on doors</label>
+                <label><input type="checkbox" name="volunteer_interests" value="phone_calls"> Make phone calls</label>
+                <label><input type="checkbox" name="volunteer_interests" value="yard_sign"> Host or display a yard sign</label>
+                <label><input type="checkbox" name="volunteer_interests" value="events"> Help at events &amp; festivals</label>
+                <label><input type="checkbox" name="volunteer_interests" value="postcards"> Write postcards / notes</label>
+                <label><input type="checkbox" name="volunteer_interests" value="wherever_needed"> Put me wherever I&rsquo;m needed!</label>
               </div>
             </fieldset>
 
             <div class="field">
               <label for="v-msg">Anything else?</label>
-              <textarea id="v-msg" name="message" placeholder="Days/times that work for you, skills you'd like to lend, etc."></textarea>
+              <textarea id="v-msg" name="notes" placeholder="Days/times that work for you, skills you'd like to lend, etc."></textarea>
             </div>
 
             <button class="btn btn--lg" type="submit">Sign me up</button>
