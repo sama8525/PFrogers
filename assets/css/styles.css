@@ -28,9 +28,9 @@
   --blue-lt:     #bfe0ef;   /* pale blue — highlights, footer links on dark */
 
   /* ---------- PAPER / NEUTRALS ---------- */
-  --paper:       #f7efe1;   /* main background — warm parchment */
-  --paper-deep:  #efe3cd;   /* alternating section background */
-  --card:        #fffaf0;   /* card / "photo" backgrounds */
+  --paper:       #ffffff;   /* main background — white */
+  --paper-deep:  #f4f2ee;   /* alternating section background — subtle off-white */
+  --card:        #ffffff;   /* card / "photo" backgrounds */
   --ink:         #2c241c;   /* body text — warm near-black */
   --ink-soft:    #5b4f42;   /* secondary text */
   --line:        #cdb999;   /* hairline / border tan */
