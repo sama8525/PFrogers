@@ -11,7 +11,7 @@
 const SITE = {
   candidate: "David Rogers",
   office: "Pflugerville City Council",
-  logo: "assets/img/logo.jpg",
+  logo: "assets/img/logo-onlight.png",
   email: "info@electmisterrogers.com",
   treasurer: "Brad Hickman",
   // Social links appear in the footer only when set to a real URL (not "#").
@@ -50,11 +50,7 @@ function buildHeader() {
   <header class="masthead">
     <div class="wrap masthead__inner">
       <a class="brand" href="index.html">
-        <img src="${SITE.logo}" alt="${SITE.candidate} for City Council logo">
-        <span class="brand__text">
-          <span class="brand__name">${SITE.candidate}</span><br>
-          <span class="brand__sub">${SITE.office}</span>
-        </span>
+        <img src="${SITE.logo}" alt="Elect Mister David Rogers for Pflugerville City Council">
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">&#9776;</button>
       <nav class="nav" id="primary-nav" aria-label="Primary">
@@ -80,8 +76,8 @@ function buildFooter() {
   <footer class="site-footer">
     <div class="wrap site-footer__grid">
       <div>
-        <h4>${SITE.candidate} for ${SITE.office.replace("· ", "")}</h4>
-        <p style="max-width:38ch;color:#cdbfa9;">Howdy, neighbor! Mr. Rogers loves this city and would be honored to keep working for you. Pitch in, sign up, or just say hello.</p>
+        <img src="assets/img/logo-onnavy.png" alt="Mister David Rogers for Pflugerville City Council" style="width:210px;height:auto;margin-bottom:0.9rem;">
+        <p style="max-width:38ch;color:rgba(255,255,255,0.85);">Howdy, neighbor! Mr. Rogers loves this city and would be honored to keep working for you. Pitch in, sign up, or just say hello.</p>
         <div class="social-row">${fb}${ig}${x}</div>
       </div>
       <div>

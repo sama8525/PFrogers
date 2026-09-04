@@ -16,25 +16,27 @@
 */
 
 :root {
-  /* ---------- BRAND COLORS (sampled from David's actual logo) ----------
-     The logo is two colors: a true red and a steel blue. Those are the
-     two anchors below. Gold + green are OPTIONAL supporting accents — if
-     the site ever feels too busy, drop them back toward red/blue/cream. */
-  /* Accent remapped from red to the logo blue (site-wide "all blue") */
-  --barn-red:    #006794;   /* was LOGO RED — now blue: buttons, accents */
-  --barn-red-dk: #004f6e;   /* darker blue for hover/active */
-  --bluebonnet:  #006794;   /* LOGO BLUE — secondary anchor */
-  --bluebonnet-dk: #004f6e; /* darker blue for hover/active */
-  --blue-lt:     #bfe0ef;   /* pale blue — highlights, footer links on dark */
+  /* ---------- BRAND COLORS (2026 sign-derived identity) ----------
+     Four colors sampled from the printed sign artwork: navy field, red
+     bands/hairlines, yellow swoop, white lettering. The old variable
+     names are kept so downstream rules keep working; only values change. */
+  --barn-red:    #123072;   /* SIGN NAVY — headings, links, primary buttons, accents */
+  --barn-red-dk: #0c2050;   /* navy hover/active */
+  --bluebonnet:  #123072;   /* SIGN NAVY — borders, focus ring */
+  --bluebonnet-dk: #0c2050; /* navy hover/active */
+  --blue-lt:     #c3cee4;   /* pale navy hairline / footer links on dark */
+  --sign-red:    #f0182a;   /* SIGN RED — rules, dividers, the loud CTA */
+  --sign-red-dk: #c9101f;   /* red hover/active */
+  --sign-yellow: #fcff00;   /* SIGN YELLOW — rare accent, never under white text */
 
   /* ---------- PAPER / NEUTRALS ---------- */
   --paper:       #ffffff;   /* main background — white */
-  --paper-deep:  #f4f2ee;   /* alternating section background — subtle off-white */
-  --card:        #ffffff;   /* card / "photo" backgrounds */
-  --ink:         #2c241c;   /* body text — warm near-black */
-  --ink-soft:    #5b4f42;   /* secondary text */
-  --line:        #cdb999;   /* hairline / border tan */
-  --line-soft:   #e3d4ba;
+  --paper-deep:  #e7ecf6;   /* the one tinted band — palest navy wash */
+  --card:        #ffffff;   /* card / photo backgrounds */
+  --ink:         #101c33;   /* body text — very dark navy, never pure black */
+  --ink-soft:    #4a5876;   /* secondary text */
+  --line:        #c3cee4;   /* hairline / border */
+  --line-soft:   #e7ecf6;
 
   /* ---------- TYPE ---------- */
   --display: "Fraunces", Georgia, "Times New Roman", serif;
@@ -164,8 +166,8 @@ p  { margin: 0 0 1.1em; }
 }
 .btn:hover { color: #fff; transform: translateY(-2px) rotate(-0.6deg); box-shadow: 0 6px 0 var(--btn-bd), var(--shadow-pop); }
 .btn:active { transform: translateY(2px) rotate(-0.6deg); box-shadow: 0 2px 0 var(--btn-bd); }
-.btn--gold  { --btn-bg: var(--bluebonnet); --btn-bd: var(--bluebonnet-dk); color: #fff; }
-.btn--green { --btn-bg: var(--bluebonnet); --btn-bd: var(--bluebonnet-dk); color: #fff; }
+.btn--gold  { --btn-bg: var(--sign-red); --btn-bd: var(--sign-red-dk); color: #fff; }
+.btn--green { --btn-bg: var(--sign-red); --btn-bd: var(--sign-red-dk); color: #fff; }
 .btn--ghost {
   background: transparent; color: var(--barn-red);
   border: 2px solid var(--barn-red); box-shadow: none;
@@ -200,11 +202,9 @@ p  { margin: 0 0 1.1em; }
   display: flex; align-items: center; justify-content: space-between;
   gap: 1rem; padding-block: 0.8rem;
 }
-.brand { display: flex; align-items: center; gap: 0.85rem; text-decoration: none; flex-shrink: 0; }
-.brand img { width: 66px; height: 66px; border-radius: 50%; border: 3px solid var(--bluebonnet); object-fit: cover; background:#fff; }
-.brand__text { line-height: 1.08; }
-.brand__name { font-family: var(--display); font-weight: 700; font-size: 1.6rem; color: var(--barn-red); white-space: nowrap; }
-.brand__sub  { font-family: var(--hand); font-size: 1rem; color: var(--ink-soft); white-space: nowrap; }
+.brand { display: block; flex-shrink: 0; text-decoration: none; line-height: 0; }
+.brand img { display: block; width: 190px; height: auto; border: 0; border-radius: 0; background: none; }
+@media (max-width: 560px) { .brand img { width: 158px; } }
 
 .nav { display: flex; align-items: center; gap: 0.2rem; }
 .nav a {
@@ -452,7 +452,7 @@ legend { font-family: var(--display); font-weight: 700; color: var(--barn-red); 
 .site-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.35rem; }
 .footer-disclaimer {
   margin-top: 2rem; padding-top: 1.2rem; border-top: 1px solid rgba(255,255,255,0.18);
-  font-size: 0.85rem; color: #cdbfa9; text-align: center;
+  font-size: 0.85rem; color: rgba(255,255,255,0.7); text-align: center;
 }
 .social-row { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.6rem; }
 .social-row a {
