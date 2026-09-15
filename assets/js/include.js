@@ -96,7 +96,8 @@ function buildFooter() {
     </div>
     <div class="wrap footer-disclaimer">
       Political advertising paid for by the David Rogers Campaign, ${SITE.treasurer}, Treasurer.<br>
-      &copy; <span id="yr"></span> ${SITE.candidate} for City Council. Made with care, right here in Pflugerville.
+      &copy; <span id="yr"></span> ${SITE.candidate} for City Council. Made with care, right here in Pflugerville.<br>
+      <a href="privacy-policy.html">Privacy Policy</a>
     </div>
   </footer>`;
 }
