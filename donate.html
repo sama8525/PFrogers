@@ -19,6 +19,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Hanken+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    .amount-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0.6rem; margin-bottom:1rem; }
+    .amt-chip {
+      font:inherit; font-weight:700; cursor:pointer;
+      padding:0.75rem 0.5rem; border:2px solid var(--line);
+      border-radius:var(--radius); background:var(--card); color:var(--ink);
+      transition:border-color .15s, background .15s, color .15s;
+    }
+    .amt-chip:hover { border-color:var(--sign-red); }
+    .amt-chip[aria-pressed="true"] { background:var(--sign-red); border-color:var(--sign-red-dk); color:#fff; }
+    @media (max-width:420px){ .amount-grid { grid-template-columns:repeat(2,1fr); } }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -36,18 +48,83 @@
     <section class="section">
       <div class="wrap grid grid-2" style="align-items:start;">
 
-        <!-- HOW TO GIVE -->
+        <!-- DONATION FORM -->
         <div class="reveal">
-          <div class="form-card">
+          <form class="form-card" id="donate-form" name="donations" method="POST" action="donate.html?thanks=1" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="donations">
+            <p hidden><label>Don&rsquo;t fill this out: <input name="bot-field"></label></p>
+
             <h2 class="mt-0">Chip in today</h2>
-            <p>In a hometown race like this one, even a few dollars makes a real difference. Thank you for helping keep Pflugerville affordable and its city government honest.</p>
+            <p>Choose an amount, tell us a few details the state requires us to record, and we&rsquo;ll send you to PayPal to finish securely. You can pay by card without a PayPal account.</p>
 
-            <h3>Mail a check</h3>
-            <p>Make your check payable to <strong>David Rogers Campaign</strong>. Please include your name, mailing address, employer, and occupation so the campaign can follow the Texas reporting rules.</p>
-            <a class="btn btn--lg" href="contact.html" style="width:100%;justify-content:center;">Contact us for the mailing details</a>
+            <fieldset>
+              <legend>Your contribution</legend>
+              <div class="amount-grid" id="amount-grid">
+                <button type="button" class="amt-chip" data-amt="25">$25</button>
+                <button type="button" class="amt-chip" data-amt="50">$50</button>
+                <button type="button" class="amt-chip" data-amt="100">$100</button>
+                <button type="button" class="amt-chip" data-amt="250">$250</button>
+                <button type="button" class="amt-chip" data-amt="500">$500</button>
+                <button type="button" class="amt-chip" data-amt="1000">$1,000</button>
+              </div>
+              <div class="field" style="margin-bottom:0;">
+                <label for="d-amount">Amount (USD) <span class="req">*</span></label>
+                <input id="d-amount" name="amount" type="number" min="1" step="0.01" inputmode="decimal" required placeholder="Enter an amount" style="max-width:220px;">
+              </div>
+            </fieldset>
 
-            <p class="form-note" style="margin-top:1rem;">Contributions to a political campaign are <strong>not tax deductible</strong>. By law the campaign records each donor&rsquo;s name, mailing address, employer, and occupation for amounts above the reporting threshold.</p>
-          </div>
+            <fieldset>
+              <legend>Who&rsquo;s giving</legend>
+              <div class="field">
+                <label for="d-name">Full legal name <span class="req">*</span></label>
+                <input id="d-name" name="legal_name" type="text" required autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="d-email">Email</label>
+                <input id="d-email" name="email" type="email" autocomplete="email">
+              </div>
+              <div class="field">
+                <label for="d-phone">Phone <span class="req">*</span></label>
+                <input id="d-phone" name="phone" type="tel" required autocomplete="tel">
+              </div>
+              <div class="field">
+                <label for="d-address">Street address <span class="req">*</span></label>
+                <input id="d-address" name="address" type="text" required autocomplete="street-address" placeholder="1234 Main St">
+              </div>
+              <div class="field">
+                <label for="d-city">City <span class="req">*</span></label>
+                <input id="d-city" name="city" type="text" required autocomplete="address-level2" value="Pflugerville">
+              </div>
+              <div class="field">
+                <label for="d-state">State <span class="req">*</span></label>
+                <input id="d-state" name="state" type="text" required autocomplete="address-level1" value="TX" style="max-width:120px;">
+              </div>
+              <div class="field">
+                <label for="d-zip">ZIP code <span class="req">*</span></label>
+                <input id="d-zip" name="zip" type="text" required inputmode="numeric" autocomplete="postal-code" style="max-width:160px;">
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Employment</legend>
+              <p class="form-note" style="margin-top:0;margin-bottom:1rem;">Texas law requires the campaign to record each donor&rsquo;s employer and occupation. If you&rsquo;re not employed, enter &ldquo;Not employed,&rdquo; &ldquo;Retired,&rdquo; or &ldquo;Self-employed.&rdquo;</p>
+              <div class="field">
+                <label for="d-employer">Employer <span class="req">*</span></label>
+                <input id="d-employer" name="employer" type="text" required autocomplete="organization">
+              </div>
+              <div class="field">
+                <label for="d-occupation">Occupation <span class="req">*</span></label>
+                <input id="d-occupation" name="occupation" type="text" required autocomplete="organization-title">
+              </div>
+            </fieldset>
+
+            <div class="checks" style="margin-bottom:1.2rem;">
+              <label><input type="checkbox" name="certification" value="yes" required> <span class="form-note" style="font-weight:500;">I certify that this contribution is made from my own funds, not those of another person; it is not drawn on the funds of a corporation or labor organization; and I am a U.S. citizen or a lawfully admitted permanent resident. <span class="req">*</span></span></label>
+            </div>
+
+            <button class="btn btn--gold btn--lg" type="submit" id="donate-submit" style="width:100%;justify-content:center;">Continue to PayPal &rarr;</button>
+            <p class="form-note" style="margin-top:0.9rem;">Payment is handled securely by PayPal. Contributions to a political campaign are <strong>not tax deductible</strong>.</p>
+          </form>
         </div>
 
         <!-- WHY IT MATTERS -->
@@ -66,6 +143,12 @@
           <p style="margin-top:1.2rem;"><a href="record.html">See the whole record &rarr;</a></p>
 
           <blockquote class="pullquote">&ldquo;By any measure, that&rsquo;s a beautiful day in Pflugerville.&rdquo;</blockquote>
+
+          <div class="card" style="margin-top:1.5rem;">
+            <h3 class="mt-0">Prefer to mail a check?</h3>
+            <p>Make your check payable to <strong>David Rogers Campaign</strong>. Please include your name, mailing address, employer, and occupation so the campaign can follow the Texas reporting rules.</p>
+            <a class="btn" href="contact.html">Contact us for the mailing details</a>
+          </div>
         </div>
 
       </div>
@@ -74,5 +157,84 @@
 
   <div data-include="footer"></div>
   <script src="assets/js/include.js"></script>
+  <script>
+  (function () {
+    var PAYPAL_EMAIL = "MrRogersForCityCouncil@aol.com";
+    var form = document.getElementById("donate-form");
+    if (!form) return;
+
+    var amountInput = document.getElementById("d-amount");
+    var chips = Array.prototype.slice.call(document.querySelectorAll(".amt-chip"));
+
+    function clearChips() {
+      chips.forEach(function (c) { c.setAttribute("aria-pressed", "false"); });
+    }
+    chips.forEach(function (chip) {
+      chip.setAttribute("aria-pressed", "false");
+      chip.addEventListener("click", function () {
+        clearChips();
+        chip.setAttribute("aria-pressed", "true");
+        amountInput.value = chip.getAttribute("data-amt");
+      });
+    });
+    // If the donor types a custom amount, clear the preset highlight.
+    amountInput.addEventListener("input", function () {
+      var match = chips.some(function (c) { return c.getAttribute("data-amt") === amountInput.value; });
+      if (!match) clearChips();
+    });
+
+    function paypalUrl() {
+      var amt = parseFloat(amountInput.value);
+      var params = new URLSearchParams();
+      params.set("cmd", "_donations");
+      params.set("business", PAYPAL_EMAIL);
+      params.set("item_name", "Contribution to the David Rogers Campaign");
+      params.set("currency_code", "USD");
+      params.set("no_recurring", "1");
+      if (!isNaN(amt) && amt > 0) params.set("amount", amt.toFixed(2));
+
+      // Prefill the payer details PayPal accepts (donor can still change them).
+      var name = (form.legal_name.value || "").trim();
+      if (name) {
+        var parts = name.split(/\s+/);
+        params.set("first_name", parts.shift());
+        if (parts.length) params.set("last_name", parts.join(" "));
+      }
+      if (form.email.value) params.set("email", form.email.value.trim());
+      if (form.address.value) params.set("address1", form.address.value.trim());
+      if (form.city.value) params.set("city", form.city.value.trim());
+      if (form.state.value) params.set("state", form.state.value.trim());
+      if (form.zip.value) params.set("zip", form.zip.value.trim());
+
+      params.set("return", location.origin + "/donate.html?thanks=1");
+      params.set("cancel_return", location.origin + "/donate.html");
+      return "https://www.paypal.com/cgi-bin/webscr?" + params.toString();
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (typeof form.reportValidity === "function" && !form.reportValidity()) return;
+
+      var btn = document.getElementById("donate-submit");
+      btn.disabled = true;
+      btn.textContent = "Redirecting to PayPal…";
+
+      var dest = paypalUrl();
+      var sent = false;
+      function go() { if (!sent) { sent = true; window.location.href = dest; } }
+
+      // Record the compliance data in Netlify, then hand off to PayPal.
+      var body = new URLSearchParams(new FormData(form)).toString();
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body
+      }).then(go).catch(go);
+
+      // Safety net: never trap the donor if the POST stalls.
+      setTimeout(go, 2500);
+    });
+  })();
+  </script>
 </body>
 </html>
